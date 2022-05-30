@@ -19,7 +19,7 @@ public class PrimeiraClasseJava {
 		
 		
 		String nome = JOptionPane.showInputDialog("Qual o nome do aluno "+qtd+" ?");
-		String idade = JOptionPane.showInputDialog("Qual a idade "+qtd+" ?");
+		String idade = JOptionPane.showInputDialog("Qual a idade "+qtd+" ? ");
 		
 		
 		Aluno aluno = new Aluno();
