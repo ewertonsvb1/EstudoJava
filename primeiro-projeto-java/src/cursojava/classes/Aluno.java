@@ -3,10 +3,9 @@ package cursojava.classes;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Aluno {
+public class Aluno extends Pessoa {
 	
-	private String nome;
-	private int idade;
+	private String nomeFaculdade;
 	
 	private List<Disciplina> disciplinas = new  ArrayList<Disciplina>();
 	
@@ -49,6 +48,14 @@ public class Aluno {
 	}
 
 
+	public String getNomeFaculdade() {
+		return nomeFaculdade;
+	}
+
+	public void setNomeFaculdade(String nomeFaculdade) {
+		this.nomeFaculdade = nomeFaculdade;
+	}
+
 	public void setIdade(int idade) {
 		this.idade = idade;
 	}
@@ -65,7 +72,7 @@ public class Aluno {
 		
 	}
 	
-	public boolean GetAlunoAprovado() {
+	public boolean getAlunoAprovado() {
 		double media = this.getMediaNota();
 		if (media >= 7) {
 			return true;
@@ -74,12 +81,12 @@ public class Aluno {
 		}
 	}
 	
-	public String GetAlunoAprovado2() {
+	public String getAlunoAprovado2() {
 		double media = this.getMediaNota();
 		if(media >= 7) {
-			return "Aluno está aprovado";
+			return "Aluno(a) está aprovado(a)!";
 		}else {
-			return "Aluno está reprovado";
+			return "Aluno(a) está reprovado(a)!";
 		}
 	}
 	
