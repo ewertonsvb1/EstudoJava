@@ -95,5 +95,11 @@ public class Aluno extends Pessoa {
 		return "Aluno [nome=" + nome + ", idade=" + idade + "]";
 	}
 
+	@Override
+	public double salario() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 	
 }

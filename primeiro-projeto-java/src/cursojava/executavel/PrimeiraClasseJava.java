@@ -7,7 +7,10 @@ import javax.swing.JOptionPane;
 
 import cursojava.classes.Aluno;
 import cursojava.classes.Disciplina;
+import cursojava.classes.Secretario;
+import cursojava.classesauxiliares.FuncaoAutenticacao;
 import cursojava.constantes.StatusAluno;
+import cursojava.interfaces.PermitirAcesso;
 
 public class PrimeiraClasseJava {
 
@@ -16,9 +19,12 @@ public class PrimeiraClasseJava {
 		
 		String login = JOptionPane.showInputDialog("Qual o login?");
 		String senha = JOptionPane.showInputDialog("Qual a senha?");
+	
+		
+		PermitirAcesso permitirAcesso = new Secretario(login, senha);
 		
 		//CONDICAO DE LOGIN
-		if(login.equalsIgnoreCase("admin") && senha.equalsIgnoreCase("123")) {
+		if(new FuncaoAutenticacao(permitirAcesso).autenticar()) { // Se for True, vai acessar
 		
 		// CRIANDO LISTA DE ALUNOS
 		List<Aluno> alunos = new ArrayList<Aluno>();
@@ -35,7 +41,10 @@ public class PrimeiraClasseJava {
 			String nome = JOptionPane.showInputDialog("Qual o nome do aluno " + qtd + " ?");
 			String idade = JOptionPane.showInputDialog("Qual a idade " + qtd + " ?");
 
+			/*new Aluno ()e uma instancia - criacao de objeto
+			 *aluno é uma referencia para o objeto aluno*/
 			Aluno aluno = new Aluno();
+			
 
 			aluno.setNome(nome);
 			aluno.setIdade((Integer.valueOf(idade)));

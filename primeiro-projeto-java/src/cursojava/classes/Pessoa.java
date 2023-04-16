@@ -5,6 +5,8 @@ public abstract class Pessoa {
 	// PROTECTED, CONSIGO COMPARTILHAR COM AS CLASSES FILHAS
 	protected String nome;
 	protected int idade;
+	// METODO ABSTRATO FICA NA CLASSE PAI, EH OBRIGATORIO NAS CLASSES FILHAS
+	public abstract double salario();
 	
 	public String getNome() {
 		return nome;
