@@ -12,19 +12,50 @@ public class ArrayVector {
 
 		Disciplina disciplina = new Disciplina();
 		disciplina.setDisciplina("Spring Boot");
-		double[] notas = { 5, 5, 5, 5 };
+		double[] notas = { 2, 6, 5, 5 };
 		disciplina.setNota(notas);
-
 		aluno.getDisciplinas().add(disciplina);
 
 		Disciplina disciplina2 = new Disciplina();
-		disciplina.setDisciplina("Java");
-		double[] notas2 = { 4, 5, 6, 7, };
-		disciplina.setNota(notas);
+		disciplina2.setDisciplina("Java");
+		double[] notas2 = { 1, 5, 8.9, 9, };
+		disciplina2.setNota(notas2);
+		aluno.getDisciplinas().add(disciplina2);
 		
-		aluno.getDisciplinas().add(disciplina);
+		System.out.println("Nome do aluno: " + aluno.getNome());
 		
-		System.out.println(disciplina);
+		//percorre as disciplinas
+		for(Disciplina disc : aluno.getDisciplinas()) {
+			
+			System.out.println("Disciplina: " + disc.getDisciplina());
+			
+			// e para cada disciplina, eu percorro as notas
+			double notaMaxima = 0.0;
+			double notaMinima = 0.0;
+			for(int pos = 0; pos < disc.getNota().length; pos++) {
+				System.out.println("Nota : " + disc.getNota()[pos]);
+				
+				
+				// se a posicao for zero entao...
+				if(pos==0) {
+					// armazena a primeira nota como sendo a maior nota
+					notaMaxima = disc.getNota()[pos];
+					notaMinima = disc.getNota()[pos];
+				}else {
+					// se a proxima nota for maior que a nota anterior, então "notaMaxima" recebe o valor dessa nota maior
+					if (disc.getNota()[pos] > notaMaxima) {
+						notaMaxima = disc.getNota()[pos];
+					}if (disc.getNota()[pos] < notaMinima) {
+						notaMinima = disc.getNota()[pos];
+					}
+				}
+			}
+			
+			//Manipulando Array de Objetos parei aqyu
+			System.out.println("A maior nota da disciplina: *" + disc.getDisciplina() + "* é de: " + notaMaxima);
+			System.out.println("A menor nota da disciplina: *" + disc.getDisciplina() + "* é de: " + notaMinima);
+		}
+		
 
 ////		// Array de String
 //////		 String[] valores = new String[2];
